@@ -8,11 +8,11 @@ app.engine('jsx', require('express-react-views').createEngine())
 app.use('/places', require('./controllers/places'))
 
 app.get('/', (req, res) => {
-  res.send('Hello world home page')
+  res.render('Hello world home page')
 })
 
 app.get('*', (req, res) => {
-  res.send('404 page')
+  res.render('404 page')
 })
 
 app.listen(process.env.PORT)
