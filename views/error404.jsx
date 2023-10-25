@@ -9,28 +9,18 @@ function error404 () {
     return (
       <Def>
           <main>
+          <link rel="stylesheet" href="/css/style.css"/>
               <h1>404: PAGE NOT FOUND</h1>
               <p>Oops, sorry, we can't find this page!</p>
+              <div>
+      <img src="/images/404-cat.jpeg" alt="cat photo" />
+      <div>
+        Photo by <a href="https://placekitten.com/">placekitten</a> on <a href="https://placekitten.com">Unsplash</a>
+      </div>
+    </div>
           </main>
       </Def>
     )
   }
   
-  const React = require('react')
-
-function Def (html) {
-    return (
-        <html>
-            <head>
-                <title>Title</title>
-                /* BOOTSTRAP CDN LINK (long) */
-                <link rel="stylesheet" href="/css/style.css"/>
-            </head>
-            <body>
-                {html.children}
-            </body>
-        </html>
-    )
-}
-
-module.exports = Def
+  
