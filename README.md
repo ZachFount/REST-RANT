@@ -68,3 +68,8 @@ Possible bonus ideas:
 * Update for comments
 * Aggregate rating for a place
 * Auto-complete state dropdown
+
+
+## NOTES TO SELF
+ * act4 pt4
+ 
