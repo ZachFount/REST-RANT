@@ -1,30 +1,31 @@
 const React = require('react')
-const Def = require('../default')
+const Def = require('../default.jsx')
 
-function New() {
-return (
-    <Def>
-        <main>
-            <h1>Add A New Place</h1>
-                <form method="POST" action="/places">
+function edit_form(data) {
+    console.log("data place", data.index)
+    return (
+        <Def>
+            <main>
+                <h1>Update A Place</h1>
+                    <form method="POST" action={`/places/${data.index}?_method=PUT`}>
                     <div className="row">
                         <div className="form-group col-sm-6">
                             <label htmlFor="name">Place Name</label>
-                            <input className="form-control" id="name" name="name" required />
+                            <input className="form-control" id="name" name="name" defaultValue={data.place.name} required />
                         </div>
-                        <div className="form-group col-sm-6">
+                        <div className="form-group col-sm-6 col-md-4 col-lg-3">
                             <label htmlFor="pic">Place Picture</label>
-                            <input className="form-control" id="pic" name="pic" />
+                            <input className="form-control" id="pic" name="pic" defaultValue={data.place.pic} />
                         </div>
                     </div>
                     <div className="row">
-                        <div className="form-group col-sm-6">
+                        <div className="form-group col-sm-6 col-md-4 col-lg-3" >
                             <label htmlFor="city">City</label>
-                            <input className="form-control" id="city" name="city" />
+                            <input className="form-control" id="city" name="city" defaultValue={data.place.city} />
                         </div>
-                        <div className="form-group col-sm-6">
+                        <div className="form-group col-sm-6 col-md-4 col-lg-3">
                             <label htmlFor="state">State</label>
-                            <input list="state-list" className="form-control" id="state" name="state" />
+                            <input list="state-list" className="form-control" id="state" name="state" defaultValue={data.place.state} />
                             <datalist id="state-list" >
                             <option value="AK">Alaska</option>
                             <option value="AL">Alabama</option>
@@ -85,12 +86,14 @@ return (
                         </div>
                         <div className="form-group col-sm-6">
                             <label htmlFor="cuisines">Cuisines</label>
-                            <input className="form-control " id="cuisines" name="cuisines" required />
+                            <input className="form-control" id="cuisines" name="cuisines" defaultValue={data.place.cuisines} required />
                         </div>
                     </div>
-                    <input className="btn btn-primary" type="submit" value="Add Place" />
-                </form>
-        </main>
-    </Def>
-)}
-module.exports = New
+                        <input className="btn btn-primary" type="submit" value="Update Place" />
+                    </form>
+                </main>
+        </Def>
+    )
+}
+
+module.exports = edit_form

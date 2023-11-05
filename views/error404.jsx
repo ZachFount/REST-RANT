@@ -2,21 +2,15 @@ const React = require('react')
 const Def = require('./default')
 
 function error404 () {
-  return (
+    return(
     <Def>
         <main>
-        <link rel="stylesheet" href="/css/style.css"/>
-            <h1>404: PAGE NOT FOUND</h1>
-            <p>Oops, sorry, we can't find this page!</p>
-            <div>
-    <img src="/images/404-cat.jpeg" alt="cat photo" />
-    <div>
-      Photo by <a href="https://placekitten.com/">placekitten</a> on <a href="https://placekitten.com">placekitten</a>
-    </div>
-  </div>
+            <h1> 404: Page not foud</h1>
+            <p>Oops, we have encountered an error and cannot find the page you are looking for. </p>
+            <img src="https://http.cat/images/404.jpg"/>
         </main>
     </Def>
-  )
+    )
 }
 
 module.exports = error404
