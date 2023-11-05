@@ -9,7 +9,7 @@ function Show (data) {
             <div className="row">
             <div className="col-sm-6"> 
                 <img className="col-sm-10 img-fluid" src={data.place.pic} alt={data.place.name}/>
-                <p className="text-center">Located in: {data.place.city}, {data.place.state}</p>
+                <h3>Located in {data.place.city}, {data.place.state}</h3>
                 </div>
             <div className="col-sm-5">
                 <h1> {data.place.name} </h1>
