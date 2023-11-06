@@ -32,5 +32,5 @@ db.Place.create([{
 })
 .catch(() => {
     console.log('failure', err)
-    process.exit
+    process.exit()
 })
