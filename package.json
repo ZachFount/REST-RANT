@@ -1,7 +1,7 @@
 {
-  "name": "rest-rant",
+  "name": "REST-RANT",
   "version": "1.0.0",
-  "description": "rest-rant is an app where users can review restaurants.",
+  "description": "REST-RANT is an app where users can review restaurants.",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
@@ -14,6 +14,7 @@
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "express-react-views": "^0.11.0",
+    "method-override": "^3.0.0",
     "nodemon": "^3.0.1",
     "react": "^16.14.0",
     "react-dom": "^16.14.0"
