@@ -34,14 +34,62 @@ router.post('/', (req, res) => {
 router.get('/:id', (req, res) => {
 
     db.Place.findById(req.params.id)
+    .populate('comments')
     .then(place => {
-      console.log(place)
+      console.log("place and comments", place, place.comments)
       res.render('places/show', { place })
     })
     .catch(err => {
       console.log('err', err)
       res.render('error404')
     })
+})
+
+// //update a particular place
+router.put('/:id', async (req,res) => {
+  await db.Place.findByIdAndUpdate(req.params.id, req.body, { new: true }) 
+  res.redirect(`/places/${req.params.id}`) 
+})
+
+router.get('/:id/edit', (req, res) => {
+  db.Place.findById(req.params.id)
+
+  .then(place => {
+
+    res.render('places/edit', { place })
+  })
+  .catch(err => {
+    console.log('err', err)
+    res.render('error404')
+  })
+
+  })
+  
+router.post('/:id/comment', (req, res) => {
+  if (req.body.author === '') { req.body.author = undefined }
+  req.body.rant = req.body.rant ? true : false
+  db.Place.findById(req.params.id)
+  .then(place => {
+      db.Comment.create(req.body)
+      .then(comment => {
+          place.comments.push(comment.id)
+          place.save()
+          .then(() => {
+              res.redirect(`/places/${req.params.id}`)
+          })
+      })
+      .catch(err => {
+          res.render('error404')
+      })
+  })
+  .catch(err => {
+      res.render('error404')
+  })
+})
+
+router.delete('/:id', async (req,res) => {;
+await db.Place.findByIdAndDelete(req.paramsid);
+res.status(303).redirect('/places')
 })
 
 module.exports = router

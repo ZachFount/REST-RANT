@@ -12,7 +12,8 @@ const placeSchema = new Schema({
     type: Number,
     min: [1870, "Were you even born yet?"],
     max:[new Date().getFullYear(), "We presume it will be amazing!"]
-    }
+    },
+    comments: [{type: mongoose.Schema.Types.ObjectId, ref :'Comment'}]
 })
 
 placeSchema.methods.showEstablished = function(){
@@ -20,3 +21,6 @@ placeSchema.methods.showEstablished = function(){
 }
 
 module.exports = mongoose.model('Place', placeSchema)
+
+
+
