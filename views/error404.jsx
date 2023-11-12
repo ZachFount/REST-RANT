@@ -6,7 +6,7 @@ function error404 () {
     <Def>
         <main>
             <h1> 404: Page not foud</h1>
-            <p>Oops, we have encountered an error and cannot find the page you are looking for. </p>
+            <p>Oops, we have encountered an error and cannot find the page you are looking for. Translation: Meow meow meow, meow, meow meow. </p>
             <img src="https://http.cat/images/404.jpg"/>
         </main>
     </Def>
