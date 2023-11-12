@@ -45,7 +45,6 @@ router.get('/:id', (req, res) => {
     })
 })
 
-// //update a particular place
 router.put('/:id', async (req,res) => {
   await db.Place.findByIdAndUpdate(req.params.id, req.body, { new: true }) 
   res.redirect(`/places/${req.params.id}`) 
