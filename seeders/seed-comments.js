@@ -3,7 +3,7 @@ const Place = require("../models/places");
 const Comment = require("../models/comment");
 
 async function seed() {
-  await db();
+  await db;
 
   let place = await Place.findOne({ name: "H-Thai-ML" });
 
@@ -13,7 +13,7 @@ async function seed() {
     stars: 5.0,
     content: "10/10 Highly recommended!",
   });
-
+  
   place.comments.push(comment.id);
 
   await place.save();
